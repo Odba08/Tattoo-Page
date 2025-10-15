@@ -1,0 +1,202 @@
+$navbar-bg: #181a27;
+$navbar-sticky-bg: rgba(26, 26, 26, 0.95); // Mismo color que tu fondo con alta opacidad
+$hover-color: #fff;
+$text: #fff;
+$navbar-padding: 1rem 2rem;
+$icon-size: 1.5em;
+$link-gap: 12px;
+$link-weight: 600;
+$nav-font-size: 1.2rem;
+
+@mixin hover-underline {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    border-radius: 16px;
+    background: $hover-color;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-out;
+  }
+  &:hover::after {
+    width: 80%;
+  }
+}
+
+.custom-navbar {
+  position: fixed;
+  width: 100%;
+  padding: $navbar-padding;
+  font-size: $nav-font-size;
+  background: transparent;
+  transition: all 0.3s ease-out;
+  z-index: 1000;
+
+  &.sticky {
+    background-color: $navbar-sticky-bg;
+    box-shadow: 0px 10px 10px rgba(9,5,29,0.17);
+    backdrop-filter: blur(15px);
+  }
+
+  .container-fluid {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .nav-link-custom {
+    display: flex;
+    align-items: center;
+    gap: $link-gap;
+    padding: 0.5rem 1rem !important;
+    font-weight: $link-weight;
+    font-size: $nav-font-size;
+    color: $text !important;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    @include hover-underline;
+
+    .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover {
+      color: $hover-color !important;
+    }
+  }
+
+  .social-buttons-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+
+    .social-btn {
+      background: transparent;
+      border: none;
+      color: $text;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border-radius: 50%;
+
+      svg { 
+        font-size: $icon-size; 
+        transition: color 0.3s; 
+      }
+
+      &:hover { 
+        color: $hover-color; 
+        transform: translateY(-2px); 
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
+  .navbar-toggler {
+    border: none !important;
+    padding: 4px 8px !important;
+    
+    &:focus {
+      box-shadow: none !important;
+    }
+    
+    .navbar-toggler-icon {
+      background-image: none !important;
+      position: relative;
+      width: 30px;
+      height: 20px;
+      
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: $text;
+        transition: all 0.3s ease;
+      }
+      
+      &::before {
+        top: 0;
+      }
+      
+      &::after {
+        bottom: 0;
+      }
+    }
+    
+    // Cuando está expandido (X)
+    &[aria-expanded="true"] .navbar-toggler-icon::before {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    &[aria-expanded="true"] .navbar-toggler-icon::after {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 991px) {
+  .custom-navbar {
+    padding: 0.8rem 1.5rem;
+
+    .navbar-toggler {
+      display: block !important;
+      order: 2; 
+    }
+
+    .navbar-collapse {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: $navbar-sticky-bg;
+      backdrop-filter: blur(15px);
+      padding: 1rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      
+      .nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        
+        .nav-link-custom {
+          justify-content: center;
+          padding: 1rem !important;
+          &::after { display: none; }
+        }
+
+        .social-buttons-wrapper {
+          justify-content: center;
+          margin: 1rem 0 0 0;
+          padding-top: 1rem;
+          border-top: 1px solid rgba(255,255,255,0.1);
+        }
+      }
+    }
+  }
+}
+
+// Desktop
+@media (min-width: 992px) {
+  .custom-navbar {
+    .navbar-toggler {
+      display: none !important;
+    }
+    
+    .navbar-collapse {
+      display: flex !important;
+      flex-basis: auto;
+    }
+  }
+}

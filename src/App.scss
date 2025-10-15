@@ -1,0 +1,79 @@
+// App.scss - Versión limpia y profesional para tattoo portfolio
+
+// Reset y configuración base
+#root {
+  width: 100%;
+  min-height: 100vh;
+  // Elimina max-width, margin, padding si quieres fullscreen
+  // o mantén algún contenedor si prefieres layout centrado
+}
+
+// Si quieres un contenedor principal centrado:
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Si quieres fullscreen (recomendado para hero sections):
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+// Utilidades globales
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Scroll behavior
+html {
+  scroll-behavior: smooth;
+}
+
+// Para el preloader - evitar scroll durante carga
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+// Estilos globales que puedes necesitar
+.section-padding {
+  padding: 5rem 0;
+}
+
+.section-dark {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.section-light {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .section-padding {
+    padding: 3rem 0;
+  }
+}
