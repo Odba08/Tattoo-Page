@@ -1,7 +1,7 @@
 import  { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import { FaInstagram, FaYoutube, FaTiktok, FaTwitter } from 'react-icons/fa';
+import { FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import { AiOutlineHome, AiOutlinePicture, AiOutlineShopping, AiOutlineContacts } from 'react-icons/ai';
 import './navbar.scss';
 
@@ -14,9 +14,8 @@ const navItems = [
 
 const socialButtons = [
   { href: 'https://instagram.com/tu-usuario', icon: <FaInstagram />, label: 'Instagram', className: 'instagram' },
-  { href: 'https://youtube.com/tu-canal', icon: <FaYoutube />, label: 'YouTube', className: 'youtube' },
   { href: 'https://tiktok.com/@tu-usuario', icon: <FaTiktok />, label: 'TikTok', className: 'tiktok' },
-  { href: 'https://twitter.com/tu-usuario', icon: <FaTwitter />, label: 'Twitter', className: 'twitter' },
+  { href: 'https://wa.me/58XXXXXXXXXX', icon: <FaWhatsapp />, label: 'WhatsApp', className: 'whatsapp' },
 ];
 
 function NavbarComponent() {

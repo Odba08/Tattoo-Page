@@ -3,7 +3,15 @@
 @import '../../styles/separador.scss';
 
 main {
+  color: #fff;
+}
+
+.home-section {
   @extend .geometric-background;
+}
+
+.component-section{
+  z-index: 8;
 }
 
 .content {
@@ -52,7 +60,8 @@ main {
   .red-divider {
     @extend .red-divider;
   }
-  
+
+ 
   ul {
     margin: 20px 0;
     padding-left: 25px;
@@ -73,6 +82,9 @@ main {
     margin-top: 35px;
   }
 }
+
+
+/* Responsive */
 
 @media (max-width: 1024px) {
   .content {

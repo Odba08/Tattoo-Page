@@ -1,0 +1,67 @@
+ @import '../../../../styles/animations.scss';
+@import '../../../../styles/separador.scss';
+ 
+ 
+ .secondary-red-divider {
+    @extend .secondary-red-divider;
+    
+  }
+
+.whatwedo{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+ 
+
+  .wwdsection{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 5rem;
+
+  
+    h2{
+      font-size: 2.2rem;
+    }
+    
+    img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+     
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      padding-bottom: 40px;
+      padding-top: 40px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+
+    }
+
+
+    .contentinfo{
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+
+    }
+  }
+}
+
+  @media ((max-width: 768px)) {
+
+    .wwdsection{
+        flex-direction: column;
+    }
+
+    }
+  

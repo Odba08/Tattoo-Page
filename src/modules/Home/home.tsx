@@ -2,10 +2,14 @@ import React from 'react';
 import './home.scss';
 import Hero from '../../components/Hero/hero.tsx';
 import image from '../../assets/endir.png';
+import WhatWeDo from './pages/whatwedo/whatwedo.tsx';
+import Tattos from './pages/tattoos/tattos.tsx';
+
 
 const Home: React.FC = () => {
     return (
         <main>
+            <section className='home-section'>  
             <Hero />
             <section className="content">
                 <div className="imagesection">
@@ -40,6 +44,12 @@ const Home: React.FC = () => {
                     </p>
                 </div>
             </section>
+
+            <WhatWeDo />        
+            </section>
+            <Tattos />
+                        
+          
         </main>
     );
 };
