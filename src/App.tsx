@@ -10,6 +10,7 @@ import Pre from './components/Pre/pre.tsx';
 import Navbar from './components/navbar/navbar.tsx';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Footer from './components/footer/footer.tsx';
 
 function App() {
   const [load, setLoad] = useState(true); 
@@ -38,6 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
+      <Footer />
        </div>
     </Router>
   )

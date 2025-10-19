@@ -4,6 +4,7 @@ import Hero from '../../components/Hero/hero.tsx';
 import image from '../../assets/endir.png';
 import WhatWeDo from './pages/whatwedo/whatwedo.tsx';
 import Tattos from './pages/tattoos/tattos.tsx';
+import ContactUs from './pages/contactus/contactus.tsx';
 
 
 const Home: React.FC = () => {
@@ -48,7 +49,7 @@ const Home: React.FC = () => {
             <WhatWeDo />        
             </section>
             <Tattos />
-                        
+            <ContactUs />       
           
         </main>
     );
