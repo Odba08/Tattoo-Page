@@ -9,7 +9,6 @@ import creamImage from '../../assets/Productos/product1-noimage.png';
 import soapImage from '../../assets/Productos/product2-noimage.png';
 import painImage from '../../assets/Productos/product3-noimage.png';
 import patchImage from '../../assets/Productos/product4-noimage.png';
-import ContactUs from '../Home/pages/contactus/contactus';
 
 
 const Products: React.FC = () => {
