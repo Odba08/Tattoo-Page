@@ -1,8 +1,8 @@
 @import '../../styles/animations.scss';
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
 @import '../../styles/separador.scss';
 
-.hero{
+.hero {
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -13,22 +13,25 @@
   align-items: center;
   flex-direction: column;
   color: #ffffff;
-  background-size: cover;
   position: relative; 
 
-  h1{
-    font-family: 'Great Vibes', cursive;    
-    font-size: 5rem;
+  h1 {
+    font-family: 'Montserrat', sans-serif;   
+    font-weight: 900; 
+    font-size: 4.5rem; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
     transform: translateY(-30px);
     animation: slideDown 2s ease forwards;
     animation-delay: 1.3s; 
     margin-bottom: 0;
   }
 
-  p{
-    font-family: 'Merriweather', serif;
-    font-size: 1.5rem;
-    margin-top: 1rem;
+  p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300; 
+    font-size: 1.8rem; 
+    margin-top: 0.5rem; 
     opacity: 0;
     transform: translateY(30px);
     animation: slideUp 2s ease forwards;
@@ -36,7 +39,7 @@
   }
 }
 
-.hero::before{
+.hero::before {
   content: "";
   position: absolute;
   top: 0;
@@ -46,7 +49,7 @@
   background: rgba(0, 0, 0, 0.7);
 }
 
-.heroContent{
+.heroContent {
   position: relative;
   z-index: 2;
   display: flex;
@@ -54,15 +57,18 @@
   align-items: center;
 }
 
-.button{
-  font-family: 'Merriweather', serif;
-  margin-top: 2rem; 
+.button {
+  font-family: 'Montserrat', sans-serif; // Consistent font
+  font-weight: 700; // Bold for the button
+  margin-top: 2.5rem; // Adjusted margin
   text-decoration: none;
   background-color: #7f1d1d; 
   color: white;
   border: none;
   padding: 12px 30px;
-  font-size: 1.2rem;
+  font-size: 1.1rem; // Adjusted size
+  text-transform: uppercase; // Uppercase for button
+  letter-spacing: 1px;
   border-radius: 5px;
   cursor: pointer;
   opacity: 0; 

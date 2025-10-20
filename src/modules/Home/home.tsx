@@ -1,7 +1,7 @@
 import React from 'react';
 import './home.scss';
 import Hero from '../../components/Hero/hero.tsx';
-import image from '../../assets/endir.png';
+import image from '../../assets/endir2.png';
 import WhatWeDo from './pages/whatwedo/whatwedo.tsx';
 import Tattos from './pages/tattoos/tattos.tsx';
 import ContactUs from './pages/contactus/contactus.tsx';

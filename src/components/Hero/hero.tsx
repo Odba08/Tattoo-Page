@@ -4,11 +4,8 @@ const Hero = () => {
     return (
         <div className={styles.hero}>
             <div className={styles.heroContent}>
-                <h1>Bienvenido a mi estudio de tatuajes</h1>
-                <p>Transformando la piel en arte</p>
-                {/* <a href="#contacto" className={styles.button}>
-                    Contáctanos
-                </a> */}
+                <h1>ENDIR ALVILLAR</h1>
+                <p>Bienvenido a mi estudio de tatuajes</p>
             </div>
         </div>
     );

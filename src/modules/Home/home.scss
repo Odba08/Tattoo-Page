@@ -29,7 +29,6 @@ main {
 }
 
 .imagesection {
-
   flex: 1.5; 
   display: flex;
   justify-content: center;
@@ -43,6 +42,17 @@ main {
     object-fit: contain;
     border-radius: 10px;
     z-index: 2;
+
+    mask-image: radial-gradient(
+      circle at center, 
+      rgba(0, 0, 0, 1) 70%,   // Centro de la imagen es opaco (no difuminado)
+      rgba(0, 0, 0, 0) 100%    // Hacia los bordes se vuelve transparente (difuminado)
+    );
+    -webkit-mask-image: radial-gradient(
+      circle at center, 
+      rgba(0, 0, 0, 1) 70%, 
+      rgba(0, 0, 0, 0) 100%
+    );
   }
 }
 
