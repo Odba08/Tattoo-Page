@@ -1,5 +1,5 @@
 $navbar-bg: #181a27;
-$navbar-sticky-bg: rgba(26, 26, 26, 0.95); // Mismo color que tu fondo con alta opacidad
+$navbar-sticky-bg: rgba(26, 26, 26, 0.95); 
 $hover-color: #fff;
 $text: #fff;
 $navbar-padding: 1rem 2rem;
@@ -135,7 +135,6 @@ $nav-font-size: 1.2rem;
       }
     }
     
-    // Cuando está expandido (X)
     &[aria-expanded="true"] .navbar-toggler-icon::before {
       transform: rotate(45deg) translate(5px, 5px);
     }
@@ -146,7 +145,6 @@ $nav-font-size: 1.2rem;
   }
 }
 
-// Mobile
 @media (max-width: 991px) {
   .custom-navbar {
     padding: 0.8rem 1.5rem;
@@ -187,7 +185,6 @@ $nav-font-size: 1.2rem;
   }
 }
 
-// Desktop
 @media (min-width: 992px) {
   .custom-navbar {
     .navbar-toggler {
