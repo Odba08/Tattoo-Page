@@ -16,20 +16,20 @@ const Home: React.FC = () => {
                 <div className="imagesection">
                     <img 
                         src={image} 
-                        alt="Estudio de tatuajes" 
+                        alt="Endir Alvillar - Artista de tatuajes" 
                         data-aos="fade-down" 
                         data-aos-delay="400"
                     />
                 </div>
                 <div className="textcontent">
-                    <h2 data-aos="fade-left">Sobre Nosotros</h2>
+                    <h2 data-aos="fade-left">Sobre Mí</h2>
                     <div 
                         className="red-divider" 
                         data-aos="fade-left" 
                         data-aos-delay="300"
                     ></div>
                     <p data-aos="fade-left" data-aos-delay="400">
-                        En nuestro estudio de tatuajes, combinamos arte y pasión para crear diseños únicos que cuentan tu historia. Nuestro equipo de artistas talentosos está dedicado a ofrecerte una experiencia segura y personalizada.
+                        En mi estudio de tatuajes, combino arte y pasión para crear diseños únicos que cuentan tu historia. Mi dedicación como artista es ofrecerte una experiencia segura y personalizada.
                     </p>
                     
                     <h2 data-aos="fade-left" data-aos-delay="500">Servicios</h2>
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
                     
                     <h2 data-aos="fade-left" data-aos-delay="900">Contacto</h2>
                     <p data-aos="fade-left" data-aos-delay="1000">
-                        ¿Listo para tu próximo tatuaje? Contáctanos para agendar una cita o para más información sobre nuestros servicios.
+                        ¿Listo para tu próximo tatuaje? Contáctame para agendar una cita o para más información sobre mis servicios.
                     </p>
                 </div>
             </section>
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
             </section>
             <Tattos />
             <ContactUs />       
-          
+           
         </main>
     );
 };
