@@ -5,7 +5,7 @@ const Hero = () => {
         <div className={styles.hero}>
             <div className={styles.heroContent}>
                 <h1>ENDIR ALVILLAR</h1>
-                <p>Bienvenido a mi estudio de tatuajes</p>
+                <p>Arte en la piel que cuenta tu historia.</p>
             </div>
         </div>
     );
