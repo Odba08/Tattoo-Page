@@ -1,7 +1,7 @@
 import React from 'react';
 import './contact.scss';
 import { SlLocationPin } from 'react-icons/sl';
-import { FaWhatsapp, FaInstagram, FaTiktok, FaFacebook } from 'react-icons/fa';
+import { FaWhatsapp, FaInstagram, FaTiktok } from 'react-icons/fa';
 import video from '../../assets/video/video3.mp4'
 
 const Contact: React.FC = () => {
