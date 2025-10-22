@@ -179,34 +179,13 @@ $highlight-color: #D90429;
   .magazine-spread {
     display: flex;
     flex-direction: column;
-    align-items: center; // 🔹 centra todo horizontalmente
-    text-align: center; // 🔹 centra los títulos y texto del contenedor
+    align-items: center; // centra el contenido
   }
 
   .bio-header {
     width: 100%;
-    text-align: center; // 🔹 centra el título y subtítulo
+    text-align: center;
     margin-bottom: 2rem;
-  }
-
-  .bio-artist-photo {
-    float: none;
-    width: 100%;
-    margin: 0 auto 1.5rem auto; // 🔹 centrada
-  }
-
-  .bio-text-columns {
-    width: 100%;
-    max-width: 90%; // 🔹 evita que se pegue a los lados
-    text-align: justify; // 🔹 mantiene la lectura natural
-    padding: 0; 
-  }
-
-  .bio-gallery {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    padding: 0 0.5rem;
-    justify-items: center; // 🔹 centra las imágenes dentro del grid
   }
 
   .bio-headline {
@@ -215,17 +194,41 @@ $highlight-color: #D90429;
 
   .bio-subheadline {
     flex-direction: column;
-    align-items: center; // 🔹 centra el @usuario también
+    align-items: center;
     span {
       margin-top: 0.5rem;
     }
   }
 
+  .bio-artist-photo {
+    float: none;
+    width: 100%;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .bio-text-columns {
+    width: 100%;
+    max-width: 95%; // 🔹 deja margen lateral
+    margin: 0 auto; // 🔹 centra el bloque
+    text-align: justify;
+    padding: 0 1rem; // 🔹 agrega espacio interno visible a ambos lados
+    overflow-wrap: break-word; // 🔹 evita que palabras largas se salgan
+  }
+
+  .bio-gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    padding: 0 0.5rem;
+    justify-items: center;
+  }
+
   .bio-footer-quote {
-    text-align: center; // 🔹 centra la frase final
+    text-align: center;
     margin-top: 2rem;
+    padding: 0 1rem; // 🔹 también deja respiración lateral
   }
 }
+
 
 
 }
