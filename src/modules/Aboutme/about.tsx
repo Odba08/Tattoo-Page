@@ -1,6 +1,6 @@
 import React from 'react';
 import './about.scss';
-import endir from '../../assets/endir3.jpg';
+import endir from '../../assets/Endir/endir3.png';
 import endir2 from '../../assets/endir2.png';
 import endir1 from '../../assets/Endir/endir1.png';
 import endir4 from '../../assets/Endir/endir4.png';
