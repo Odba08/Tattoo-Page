@@ -194,34 +194,46 @@ $highlight-color: #D90429;
     }
   }
 
-  @media (max-width: 600px) {
-    padding: 1.5rem;
-    
-    .bio-artist-photo {
-      float: none;
-      width: 100%;
-      margin-right: 0;
-    }
+ @media (max-width: 600px) {
+  padding: 1.5rem 1rem; 
+  box-sizing: border-box; 
+  overflow-x: hidden; 
+  
+  .magazine-spread {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
 
-    .bio-text-columns {
-      text-align: left;
-    }
+  .bio-artist-photo {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
 
-    .bio-gallery {
-      grid-template-columns: 1fr 1fr; 
-      gap: 0.75rem;
-    }
+  .bio-text-columns {
+    text-align: left;
+    padding: 0 0.5rem; 
+  }
 
-    .bio-headline {
-      font-size: 2.8rem;
-    }
+  .bio-gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    padding: 0 0.5rem; // 🔹 agrega espacio lateral a las imágene
+  }
 
-    .bio-subheadline {
-      flex-direction: column;
-      align-items: flex-start;
-      span {
-        margin-top: 0.5rem;
-      }
+  .bio-headline {
+    font-size: 2.8rem;
+  }
+
+  .bio-subheadline {
+    flex-direction: column;
+    align-items: flex-start;
+    span {
+      margin-top: 0.5rem;
     }
   }
+}
+
 }
