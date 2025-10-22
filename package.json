@@ -18,6 +18,7 @@
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.9.4",
+    "react-transition-group": "^4.4.5",
     "sass": "^1.93.2",
     "swiper": "^12.0.2"
   },
@@ -28,6 +29,7 @@
     "@types/react": "^19.1.16",
     "@types/react-bootstrap": "^1.0.1",
     "@types/react-dom": "^19.1.9",
+    "@types/react-transition-group": "^4.4.12",
     "@vitejs/plugin-react": "^5.0.4",
     "babel-plugin-react-compiler": "^19.1.0-rc.3",
     "eslint": "^9.36.0",

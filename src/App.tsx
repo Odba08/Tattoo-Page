@@ -16,6 +16,7 @@ import Products from './modules/Products/products.tsx';
 import Tattos from './modules/Tattos/tattos.tsx';
 import Curse from './modules/Curse/curse.tsx';
 import ScrollToTop from './components/scrolltotop.tsx';
+import About from './modules/Aboutme/about.tsx';
 
 function App() {
   const [load, setLoad] = useState(true); 
@@ -48,6 +49,8 @@ function App() {
         <Route path="productos" element={<Products />} />
         <Route path="tattoos" element={<Tattos />} />
         <Route path="cursos" element={<Curse />} />
+        <Route path="about" element={<About />} />
+
 
 
       </Routes>

@@ -40,7 +40,7 @@ function Footer() {
             {/* Instagram */}
             <li className="social-icons">
               <a
-                href="https://instagram.com/ENDIRALVILLAR" // <-- Cambia esto si es otro usuario
+                href="https://www.instagram.com/endiralvillar/" // <-- Cambia esto si es otro usuario
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -51,7 +51,7 @@ function Footer() {
             {/* TikTok */}
             <li className="social-icons">
               <a
-                href="https://tiktok.com/@ENDIRALVILLAR" // <-- Cambia esto si es otro usuario
+                href="https://tiktok.com/@endiralvillar" // <-- Cambia esto si es otro usuario
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -62,7 +62,7 @@ function Footer() {
             {/* WhatsApp */}
             <li className="social-icons">
               <a
-                href="https://wa.me/58XXXXXXXXXX" // <-- PONE TU NÚMERO AQUÍ
+                href="https://wa.me/584149693493" // <-- PONE TU NÚMERO AQUÍ
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"

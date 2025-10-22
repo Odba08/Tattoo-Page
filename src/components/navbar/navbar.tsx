@@ -2,20 +2,24 @@ import  { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
-import { AiOutlineHome, AiOutlinePicture, AiOutlineShopping, AiOutlineContacts } from 'react-icons/ai';
+// 1. IMPORTÉ EL NUEVO ICONO AQUÍ
+import { AiOutlineHome, AiOutlinePicture, AiOutlineShopping, AiOutlineContacts, AiOutlineUser } from 'react-icons/ai';
 import './navbar.scss';
 
 const navItems = [
   { to: '/', label: 'Inicio', icon: <AiOutlineHome /> },
   { to: '/tattoos', label: 'Tattoos', icon: <AiOutlinePicture /> },
+  // 2. CAMBIÉ EL ICONO AQUÍ
+  { to: '/about', label: 'Sobre Mi', icon: <AiOutlineUser /> },
   { to: '/productos', label: 'Productos', icon: <AiOutlineShopping /> },
   { to: '/contacto', label: 'Contacto', icon: <AiOutlineContacts /> },
 ];
 
 const socialButtons = [
-  { href: 'https://instagram.com/tu-usuario', icon: <FaInstagram />, label: 'Instagram', className: 'instagram' },
-  { href: 'https://tiktok.com/@tu-usuario', icon: <FaTiktok />, label: 'TikTok', className: 'tiktok' },
-  { href: 'https://wa.me/58XXXXXXXXXX', icon: <FaWhatsapp />, label: 'WhatsApp', className: 'whatsapp' },
+  // 3. ACTUALICÉ TUS ENLACES
+  { href: 'https://www.instagram.com/endiralvillar/', icon: <FaInstagram />, label: 'Instagram', className: 'instagram' },
+  { href: 'https://tiktok.com/@endiralvillar', icon: <FaTiktok />, label: 'TikTok', className: 'tiktok' }, // <-- Recuerda cambiar este
+  { href: 'https://wa.me/584149693493', icon: <FaWhatsapp />, label: 'WhatsApp', className: 'whatsapp' },
 ];
 
 function NavbarComponent() {

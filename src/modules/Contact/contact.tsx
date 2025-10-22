@@ -12,26 +12,33 @@ const Contact: React.FC = () => {
 
                 <div className="contact-grid-top">
                     <div className="contact-info">
-                        <h2>Cómo Encontrarnos</h2>
+                        
+                        {/* --- CAMBIO A SINGULAR --- */}
+                        <h2>Cómo Encontrarme</h2>
+                        
                         <div 
                             className="red-divider" 
                             data-aos="fade-left" 
                             data-aos-delay="300"
                         ></div>
                         <p>
-                            Para consultas o presupuestos podés completar el formulario o escribirnos por Whatsapp, Facebook Messenger o Instagram DM.
-                            ¡Pasá a visitarnos! Estamos de Lunes a Sábados de 11 a 20 hs.
+                            {/* --- CAMBIO A SINGULAR --- */}
+                            Para consultas o presupuestos podés completar el formulario o escribirme por Whatsapp, Facebook Messenger o Instagram DM.
+                            ¡Pasa a visitarme! Estoy de Lunes a Sábados de 11 a 20 hs.
                         </p>
                         <ul className="contact-links-list">
-                            <li><a href="#"><SlLocationPin /> Centro Comercial Paseo</a></li>
-                            <li><a href="#"><FaWhatsapp /> WhatsApp</a></li>
-                            <li><a href="#"><FaInstagram /> Instagram</a></li>
-                            <li><a href="#"><FaTiktok /> TikTok</a></li>
-                            <li><a href="#"><FaFacebook /> Facebook</a></li>
+                            {/* AÑADE AQUÍ TU LINK DE GOOGLE MAPS */}
+                            <li><a href="#" target="_blank" rel="noopener noreferrer"><SlLocationPin /> Maracaibo Venezuela</a></li>
+                            
+                            {/* --- LINKS ACTUALIZADOS --- */}
+                            <li><a href="https://wa.me/584149693493" target="_blank" rel="noopener noreferrer"><FaWhatsapp /> WhatsApp</a></li>
+                            <li><a href="https://www.instagram.com/endiralvillar/" target="_blank" rel="noopener noreferrer"><FaInstagram /> Instagram</a></li>
+                            <li><a href="https://www.tiktok.com/@endiralvillar" target="_blank" rel="noopener noreferrer"><FaTiktok /> TikTok</a></li>
                         </ul>
                     </div>
                     <div className="map-container">
                         
+                        {/* AÑADE AQUÍ EL 'src' DE TU GOOGLE MAPS EMBED */}
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.4580778955014!2d-71.62266102429732!3d10.699107360613823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e899952a31f6751%3A0xcaad33165e03c9ff!2sParadise%20Tattoo%20Studio!5e0!3m2!1ses!2sus!4v1760919325508!5m2!1ses!2sus" 
                             width="600" 
@@ -60,15 +67,15 @@ const Contact: React.FC = () => {
                         </form>
                     </div>
                    <div className="video-container">
-                <video 
-                    src={video} 
-                    autoPlay
-                    loop 
-                    muted 
-                    playsInline>
-                </video>
-                
-                </div>
+                        <video 
+                            src={video} 
+                            autoPlay
+                            loop 
+                            muted 
+                            playsInline>
+                        </video>
+                        
+                   </div>
                 </div>
 
             </div>
