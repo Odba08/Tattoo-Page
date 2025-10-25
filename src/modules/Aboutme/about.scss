@@ -179,7 +179,7 @@ $highlight-color: #D90429;
   .magazine-spread {
     display: flex;
     flex-direction: column;
-    align-items: center; // centra el contenido
+    align-items: center; 
   }
 
   .bio-header {
@@ -208,11 +208,11 @@ $highlight-color: #D90429;
 
   .bio-text-columns {
     width: 100%;
-    max-width: 95%; // 🔹 deja margen lateral
-    margin: 0 auto; // 🔹 centra el bloque
+    max-width: 95%; 
+    margin: 0 auto; 
     text-align: justify;
-    padding: 0 1rem; // 🔹 agrega espacio interno visible a ambos lados
-    overflow-wrap: break-word; // 🔹 evita que palabras largas se salgan
+    padding: 0 1rem; 
+    overflow-wrap: break-word; 
   }
 
   .bio-gallery {
@@ -225,7 +225,7 @@ $highlight-color: #D90429;
   .bio-footer-quote {
     text-align: center;
     margin-top: 2rem;
-    padding: 0 1rem; // 🔹 también deja respiración lateral
+    padding: 0 1rem; 
   }
 }
 

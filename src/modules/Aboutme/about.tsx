@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './about.scss';
 import endir from '../../assets/Endir/endir3.png';
 import endir2 from '../../assets/endir2.png';
 import endir1 from '../../assets/Endir/endir1.png';
 import endir4 from '../../assets/Endir/endir4.png';
 import endir5 from '../../assets/Endir/endir5.png';
-import tatuaje1 from '../../assets/tattos/image1.png';
-import tatuaje2 from '../../assets/tattos/image2.png';
+import tatuaje1 from '../../assets/tattos/IMG_3330.jpg';
+import tatuaje2 from '../../assets/tattos/Black-gray/image2.png';
 import tatuaje3 from '../../assets/tattos/image3.png';
 import tatuaje4 from '../../assets/tattos/image4.png';
 import tatuaje5 from '../../assets/tattos/image5.png';
 import tatuaje6 from '../../assets/tattos/image6.png';
+import { aboutTranslations } from '../../in18/about.i18n'; // Importar traducciones
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+
+// --- FUNCIONES DE CÁLCULO ---
 
 const calculateAge = (birthdate: string) => {
     const birthDate = new Date(birthdate);
@@ -28,9 +31,42 @@ const calculateAge = (birthdate: string) => {
     return age;
 };
 
+// Calcula años de experiencia (Asumo que empezó en 2012)
+const calculateYearsTattooing = (startYear: number) => {
+    const today = new Date();
+    return today.getFullYear() - startYear;
+};
+
+// Función para inicializar el idioma desde localStorage
+const getInitialLanguage = (): 'es' | 'en' => {
+    const storedLang = localStorage.getItem('appLanguage');
+    return (storedLang === 'en') ? 'en' : 'es';
+};
+
 const About: React.FC = () => {
+    // --- LÓGICA DE TRADUCCIÓN AISLADA ---
+    const [language, setLanguage] = useState<'es' | 'en'>(getInitialLanguage);
+    const t = aboutTranslations[language];
+
+    useEffect(() => {
+        const handleStorageChange = () => {
+            const newLang = getInitialLanguage();
+            if (newLang !== language) {
+                setLanguage(newLang);
+            }
+        };
+
+        window.addEventListener('storage', handleStorageChange);
+
+        return () => {
+            window.removeEventListener('storage', handleStorageChange);
+        };
+    }, [language]);
+    // --- FIN LÓGICA DE TRADUCCIÓN AISLADA ---
+
     const birthDate = '1990-08-29';
     const age = calculateAge(birthDate);
+    const yearsTattooing = calculateYearsTattooing(2012); // Asumo 2012 como inicio
 
     const artistImages = [
         endir,
@@ -39,6 +75,15 @@ const About: React.FC = () => {
         endir5,
         endir2
     ];
+    
+    // Función de ayuda para reemplazar placeholders en la biografía
+    const renderParagraph = (key: keyof typeof t) => {
+        let text = t[key];
+        text = text.replace('{age}', age.toString());
+        text = text.replace('{yearsTattooing}', yearsTattooing.toString());
+        return <p>{text}</p>;
+    };
+
 
     return (
         <section className="about-modern-magazine">
@@ -47,7 +92,7 @@ const About: React.FC = () => {
                     <header className="bio-header">
                         <h1 className="bio-headline">ENDIR ALVILLAR</h1>
                         <h2 className="bio-subheadline">
-                            MARACAIBO, VENEZUELA
+                            {t.location}
                             <span>@endirtattoo</span>
                         </h2>
                     </header>
@@ -68,7 +113,7 @@ const About: React.FC = () => {
                             >
                                 {artistImages.map((imgSrc, index) => (
                                     <SwiperSlide key={index}>
-                                        <img src={imgSrc} alt={`Endir Alvillar - Foto ${index + 1}`} />
+                                        <img src={imgSrc} alt={`${t.imageAlt} ${index + 1}`} />
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
@@ -76,62 +121,37 @@ const About: React.FC = () => {
                     </div>
 
                     <div className="bio-text-columns">
-                        <p>
-                            Mi nombre es Endir Alvillar tengo {age} años, soy tatuador Venezolano
-                            de la ciudad de Maracaibo, tengo 11 años tatuando contando desde
-                            la primera vez que toque una máquina para tatuar. Todo empezó en
-                            el 2012 estudiando Diseño Gráfico en la universidad, fui a un
-                            estudio para que me hicieran mi primero tatuaje...
-                        </p>
-                        <p>
-                            Al comprarla y tenerla en mis manos en ese instante supe que me iba
-                            a dedicar a esto toda mi vida, fue un amor a primera vista. A pesar
-                            de que hay altos y bajos...
-                        </p>
-                        <p>
-                            En el 2015 empecé a tatuar en un estudio de la ciudad y era el mismo
-                            studio donde fui hacerme mi primer tatuaje y donde empezó la magia.
-                        </p>
-                        <p>
-                            Durante mi carrera me dediqué a desarrollar la técnica de líneas
-                            perfectas y me especialicé en estilos como fine line, geométrico
-                            y neo tradicional. Incursione un tiempo en el estilo watercolor...
-                        </p>
-                        <p>
-                            Es el estilo que me dedico actualmente, en mis diseños incluyo toda
-                            la magia posible del realismo y a la hora de tatuar me gusta
-                            saturar y contrastar mis diseños para un resultado más duradero.
-                        </p>
-                        <p>
-                            En el 2023 aperture mi studio en la ciudad de Maracaibo que llevar
-                            por nombre Paradise Tattoo Studio, es donde atiendo actualmente
-                            mis citas y tenemos tatuadores residentes...
-                        </p>
+                        {renderParagraph('p1')}
+                        {renderParagraph('p2')}
+                        {renderParagraph('p3')}
+                        {renderParagraph('p4')}
+                        {renderParagraph('p5')}
+                        {renderParagraph('p6')}
                     </div>
 
                     <footer className="bio-footer-quote">
-                        “El secreto está en los detalles.”
+                        “{t.quote}”
                     </footer>
                 </article>
 
                 <aside className="bio-gallery">
                     <div className="gallery-image">
-                        <img src={tatuaje1} alt="Tatuaje Realista" />
+                        <img src={tatuaje1} alt={t.imageAlt} />
                     </div>
                     <div className="gallery-image">
-                        <img src={tatuaje2} alt="Tatuaje Realista" />
+                        <img src={tatuaje2} alt={t.imageAlt} />
                     </div>
                     <div className="gallery-image">
-                        <img src={tatuaje3} alt="Tatuaje Realista" />
+                        <img src={tatuaje3} alt={t.imageAlt} />
                     </div>
                     <div className="gallery-image">
-                        <img src={tatuaje4} alt="Tatuaje Realista" />
+                        <img src={tatuaje4} alt={t.imageAlt} />
                     </div>
                     <div className="gallery-image">
-                        <img src={tatuaje5} alt="Tatuaje Realista" />
+                        <img src={tatuaje5} alt={t.imageAlt} />
                     </div>
                     <div className="gallery-image">
-                        <img src={tatuaje6} alt="Tatuaje Realista" />
+                        <img src={tatuaje6} alt={t.imageAlt} />
                     </div>
                 </aside>
             </div>
