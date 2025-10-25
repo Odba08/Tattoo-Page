@@ -1,16 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './course.scss';
+// 1. IMPORTAR Link DESDE react-router-dom
+import { Link } from 'react-router-dom'; 
+import './course.scss'; 
 import comingSoonVideo from '../../assets/video/video2.mp4';
-import promoImage from '../../assets/aprende/aprende.png';
-import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
-import { curseTranslations } from '../../in18/curse.i18n';
+import promoImage from '../../assets/aprende/aprende.png'; 
+import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa'; 
+import { curseTranslations } from '../../in18/curse.i18n'; 
 
 const getInitialLanguage = (): 'es' | 'en' => {
   const storedLang = localStorage.getItem('appLanguage');
   return storedLang === 'en' ? 'en' : 'es';
 };
 
-const Course: React.FC = () => {
+const Course: React.FC = () => { // Renombrado a Curse
   const [language, setLanguage] = useState<'es' | 'en'>(getInitialLanguage());
   const [isEnded, setIsEnded] = useState(false);
   const [isMuted, setIsMuted] = useState(false); 
@@ -21,8 +23,8 @@ const Course: React.FC = () => {
     if (video) video.muted = isMuted;
 
     const handleStorageChange = () => {
-      const newLang = getInitialLanguage();
-      if (newLang !== language) setLanguage(newLang);
+        const newLang = getInitialLanguage();
+        if (newLang !== language) setLanguage(newLang);
     };
 
     window.addEventListener('storage', handleStorageChange);
@@ -33,8 +35,9 @@ const Course: React.FC = () => {
     const video = videoRef.current;
     if (video) {
       try {
-        video.muted = false;
+        video.muted = false; 
         await video.play(); 
+        setIsMuted(false); 
       } catch (err) {
         console.warn('Autoplay con sonido bloqueado, reproduciendo en mute.');
         video.muted = true;
@@ -57,23 +60,20 @@ const Course: React.FC = () => {
 
   return (
     <section className="courses-coming-soon-section">
-      {/* VIDEO PRINCIPAL */}
       <video
         ref={videoRef}
         className={`background-video ${isEnded ? 'fade-out' : ''}`}
         src={comingSoonVideo}
-        autoPlay
+        autoPlay 
         playsInline
-        onCanPlay={handleCanPlay}
+        onCanPlay={handleCanPlay} 
         onEnded={() => setIsEnded(true)}
       />
 
-      {/* IMAGEN FINAL */}
       <div className={`final-background ${isEnded ? 'show' : ''}`}>
         <img src={promoImage} alt="Tattoo Masterclass" />
       </div>
 
-      {/* CONTENIDO */}
       <div className="content-box-bottom">
         <h1 className="main-title">{t.mainTitle}</h1>
         <div className="red-divider"></div>
@@ -83,12 +83,13 @@ const Course: React.FC = () => {
           <br />
           {t.subtitleLine2}
         </p>
-        <a href="/contacto" className="waitlist-button">
+
+        <Link to="/contacto" className="waitlist-button">
           {t.buttonText}
-        </a>
+        </Link>
+        
       </div>
 
-      {/* BOTÓN DE SONIDO */}
       <button
         className="mute-toggle-btn"
         onClick={toggleMute}
@@ -100,4 +101,4 @@ const Course: React.FC = () => {
   );
 };
 
-export default Course;
+export default Course; 
