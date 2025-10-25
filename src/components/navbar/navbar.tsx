@@ -2,7 +2,14 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
-import { AiOutlineHome, AiOutlinePicture, AiOutlineShopping, AiOutlineContacts, AiOutlineUser } from 'react-icons/ai';
+import { 
+    AiOutlineHome, 
+    AiOutlinePicture, 
+    AiOutlineShopping, 
+    AiOutlineContacts, 
+    AiOutlineUser 
+} from 'react-icons/ai';
+import { BsMortarboard } from 'react-icons/bs'; // IMPORTAR NUEVO ICONO
 import { navbarTranslations } from '../../in18/navbar.i18n'; 
 import './navbar.scss';
 
@@ -22,7 +29,6 @@ function NavbarComponent() {
     const [expanded, setExpanded] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     
-    // 1. Inicializa el idioma con el valor del storage
     const [language, setLanguage] = useState<'es' | 'en'>(getInitialLanguage); 
 
     const t = navbarTranslations[language];
@@ -33,6 +39,7 @@ function NavbarComponent() {
         { to: '/about', label: t.navAbout, icon: <AiOutlineUser /> },
         { to: '/productos', label: t.navProducts, icon: <AiOutlineShopping /> },
         { to: '/contacto', label: t.navContact, icon: <AiOutlineContacts /> },
+        { to: '/course', label: t.navCurse, icon: <BsMortarboard /> }, 
     ];
 
     const handleScroll = useCallback(() => {
@@ -46,15 +53,9 @@ function NavbarComponent() {
 
     const handleLanguageChange = (newLang: 'es' | 'en') => {
         
-        // 1. Establece el idioma localmente
         setLanguage(newLang);
-
-        // 2. Guarda el idioma en localStorage
         localStorage.setItem('appLanguage', newLang);
-        
-        // 3. Simula el evento 'storage' para que los componentes en la misma pestaña reaccionen
         window.dispatchEvent(new Event('storage')); 
-        
         setExpanded(false);
     };
 
@@ -87,7 +88,6 @@ function NavbarComponent() {
                             </Nav.Link>
                         ))}
                         
-                        {/* SELECTOR DE IDIOMA */}
                         <Nav.Item className="language-switcher-wrapper">
                             <button 
                                 onClick={() => handleLanguageChange('es')} 
