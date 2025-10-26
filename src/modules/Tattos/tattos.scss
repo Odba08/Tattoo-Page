@@ -75,31 +75,27 @@
 }
 
 .tattoo-carousel {
-  padding-bottom: 40px; // Space for pagination dots
+  padding-bottom: 40px;
 
-  .swiper-slide {
-    img {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 4 / 5; // Change aspect ratio for portrait
-      object-fit: cover;
-      border-radius: 8px;
-    }
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 8px;
   }
 
-  // Hide navigation buttons
   .swiper-button-next,
   .swiper-button-prev {
     display: none;
   }
 
-  // Style pagination dots
   .swiper-pagination {
     position: absolute;
-    bottom: 0px; // Position dots below the swiper
+    bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
-    width: auto !important; // Override Swiper's width: 100%
+    width: auto !important;
   }
 
   .swiper-pagination-bullet {
@@ -107,7 +103,7 @@
     opacity: 0.5;
     width: 10px;
     height: 10px;
-    margin: 0 5px !important; // Add spacing between dots
+    margin: 0 5px !important;
   }
 
   .swiper-pagination-bullet-active {
@@ -148,9 +144,12 @@
 .large-media {
   width: 100%;
   height: 100%;
-  
+
   video {
     border-radius: 8px;
+    display: block;
+    -webkit-transform: translateZ(0); // mejora renderizado en iOS
+    transform: translateZ(0); // versión estándar ✅
   }
 }
 
@@ -166,9 +165,7 @@
     grid-template-columns: 1fr;
   }
   
-  .mixed-layout-1 .large-media {
-    grid-row: 1;
-  }
+  .mixed-layout-1 .large-media,
   .mixed-layout-2 .large-media {
     grid-row: 1;
   }
