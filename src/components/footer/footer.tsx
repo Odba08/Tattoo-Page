@@ -93,7 +93,7 @@ function Footer() {
                         {/* WhatsApp */}
                         <li className="social-icons">
                             <a
-                                href="https://wa.me/584149693493"
+                                href="https://wa.me/584124726621"
                                 style={{ color: "white" }}
                                 target="_blank" 
                                 rel="noopener noreferrer"

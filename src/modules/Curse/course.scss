@@ -15,7 +15,6 @@ $text-subtle: #ccc;
   margin: 0;
   position: relative;
   overflow: hidden;
-
 }
 
 /* VIDEO */
@@ -74,6 +73,7 @@ $text-subtle: #ccc;
   width: 90%;
   margin-bottom: 5vh;
   background: none;
+  box-sizing: border-box; // <-- ESTA ES LA LÍNEA AÑADIDA
 }
 
 .main-title {

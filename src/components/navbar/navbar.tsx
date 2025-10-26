@@ -22,7 +22,7 @@ const getInitialLanguage = (): 'es' | 'en' => {
 const socialButtons = [
     { href: 'https://www.instagram.com/endiralvillar/', icon: <FaInstagram />, className: 'instagram' },
     { href: 'https://tiktok.com/@endiralvillar', icon: <FaTiktok />, className: 'tiktok' },
-    { href: 'https://wa.me/584149693493', icon: <FaWhatsapp />, className: 'whatsapp' },
+    { href: 'https://wa.me/584124726621', icon: <FaWhatsapp />, className: 'whatsapp' },
 ];
 
 function NavbarComponent() {

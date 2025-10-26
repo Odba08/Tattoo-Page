@@ -36,7 +36,7 @@ const ContactUs: React.FC = () => {
             <div className="prevfooter">
                 <h1>{t.titlePart1} <span>{t.titlePart2}</span></h1>
                 
-                <a href="https://wa.me/584149693493">
+                <a href="https://wa.me/584124726621">
                     {t.buttonText}
                     <FaWhatsapp />
                 </a>

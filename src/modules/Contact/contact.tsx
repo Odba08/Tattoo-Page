@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
                         <ul className="contact-links-list">
                             <li><a href="#" target="_blank" rel="noopener noreferrer"><SlLocationPin /> {t.location}</a></li>
                             
-                            <li><a href="https://wa.me/584149693493" target="_blank" rel="noopener noreferrer"><FaWhatsapp /> WhatsApp</a></li>
+                            <li><a href="https://wa.me/584124726621" target="_blank" rel="noopener noreferrer"><FaWhatsapp /> WhatsApp</a></li>
                             <li><a href="https://www.instagram.com/endiralvillar/" target="_blank" rel="noopener noreferrer"><FaInstagram /> Instagram</a></li>
                             <li><a href="https://www.tiktok.com/@endiralvillar" target="_blank" rel="noopener noreferrer"><FaTiktok /> TikTok</a></li>
                         </ul>

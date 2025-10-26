@@ -93,7 +93,7 @@ const About: React.FC = () => {
                         <h1 className="bio-headline">ENDIR ALVILLAR</h1>
                         <h2 className="bio-subheadline">
                             {t.location}
-                            <span>@endirtattoo</span>
+                            <span>@endiralvillar</span>
                         </h2>
                     </header>
 

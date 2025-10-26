@@ -12,7 +12,7 @@ const getInitialLanguage = (): 'es' | 'en' => {
   return storedLang === 'en' ? 'en' : 'es';
 };
 
-const Course: React.FC = () => { // Renombrado a Curse
+const Course: React.FC = () => { 
   const [language, setLanguage] = useState<'es' | 'en'>(getInitialLanguage());
   const [isEnded, setIsEnded] = useState(false);
   const [isMuted, setIsMuted] = useState(false); 
