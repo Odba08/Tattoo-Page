@@ -186,3 +186,25 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  /* Correcciones específicas para Safari iOS */
+
+  .sticker-layout img,
+  .small-grid img {
+    aspect-ratio: 1 / 1; /* mantiene proporción cuadrada */
+    height: auto !important;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+  }
+
+  .tattoo-grid img {
+    border-radius: 10px;
+  }
+
+  /* Evita que se corte o deforme el grid */
+  .sticker-layout {
+    grid-auto-rows: 1fr;
+  }
+}
