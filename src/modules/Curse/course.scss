@@ -199,3 +199,28 @@ $text-subtle: #ccc;
     font-size: 1rem;
   }
 }
+
+@media (max-width: 768px) {
+  .content-box-bottom {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: 0 auto; // 🔹 fuerza centrado horizontal
+    width: 100%; // 🔹 asegura que use todo el ancho disponible
+    display: flex;
+    flex-direction: column;
+    align-items: center; // 🔹 centra todos los hijos horizontalmente
+    justify-content: center;
+  }
+
+  .main-title,
+  .coming-soon-text,
+  .subtitle {
+    text-align: center;
+  }
+
+  .waitlist-button {
+    margin: 0 auto; // 🔹 centra el botón
+  }
+}

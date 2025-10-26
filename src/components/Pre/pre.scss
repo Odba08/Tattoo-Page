@@ -145,3 +145,42 @@ $container-height: $big-size * 2;
     margin-top: 80px;
   }
 }
+
+@media (max-width: 768px) {
+  .loader {
+    width: 90vw; // 🔹 usar el ancho de la pantalla
+    max-width: 300px; // 🔹 límite para que no se deforme
+    height: 80px; // 🔹 ajusta la altura proporcionalmente
+    margin: 0 auto; // 🔹 centra horizontalmente
+
+    &::after {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(1); // 🔹 centra el círculo principal
+      width: 40px;
+      height: 40px;
+    }
+
+    div {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); // 🔹 centra el grupo animado
+      width: 25px;
+      height: 25px;
+
+      &::before {
+        left: -70px; // 🔹 ajusta la distancia en proporción a tamaño reducido
+      }
+      &::after {
+        left: 70px;
+      }
+    }
+  }
+
+  .loading-text {
+    font-size: 1rem;
+    margin-top: 60px;
+    text-align: center; // 🔹 asegura el centrado del texto
+    width: 100%;
+  }
+}

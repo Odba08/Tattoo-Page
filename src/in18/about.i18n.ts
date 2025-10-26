@@ -10,7 +10,7 @@ export const aboutTranslations = {
     p3: "En el 2015 empecé a tatuar en un estudio de la ciudad y era el mismo studio donde fui hacerme mi primer tatuaje y donde empezó la magia.",
     
     // --- LÍNEA MODIFICADA ---
-    p4: "Durante mi carrera me dediqué a desarrollar la técnica de líneas perfectas y me especialicé en estilos como fine line, geométrico y neo tradicional. Incursione un tiempo en el estilo watercolor... y aproximadamente hace 4 años empecé a sumergirme en el mundo del realismo en blanco y negro y quedé totalmente atrapado en este estilo,",
+    p4: "Durante mi carrera me dediqué a desarrollar la técnica de líneas perfectas y me especialicé en estilos como fine line, geométrico y neo tradicional. Incursione un tiempo en el estilo watercolor, y aproximadamente hace 4 años empecé a sumergirme en el mundo del realismo en blanco y negro y quedé totalmente atrapado en este estilo.",
     // --- FIN DE LA MODIFICACIÓN ---
 
     p5: "Es el estilo que me dedico actualmente, en mis diseños incluyo toda la magia posible del realismo y a la hora de tatuar me gusta saturar y contrastar mis diseños para un resultado más duradero.",
@@ -27,7 +27,7 @@ export const aboutTranslations = {
     p3: "In 2015, I started tattooing in a studio in the city and it was the same studio where I went for my first tattoo and where the magic began.",
     
     // --- LÍNEA MODIFICADA (TRADUCIDA) ---
-    p4: "During my career, I dedicated myself to developing the technique of perfect lines and specialized in styles such as fine line, geometric, and neo-traditional. I ventured into the watercolor style for a while... and approximately 4 years ago I began to dive into the world of black and white realism and became totally trapped in this style,",
+    p4: "During my career, I dedicated myself to developing the technique of perfect lines and specialized in styles such as fine line, geometric, and neo-traditional. I ventured into the watercolor style for a while, and approximately 4 years ago I began to dive into the world of black and white realism and became totally trapped in this style.",
     // --- FIN DE LA MODIFICACIÓN ---
 
     p5: "This is the style I currently dedicate myself to; I include all the possible magic of realism in my designs, and when tattooing, I like to saturate and contrast my designs for a more lasting result.",
