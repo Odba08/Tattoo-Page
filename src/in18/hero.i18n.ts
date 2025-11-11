@@ -1,8 +1,8 @@
 export const heroTranslations = {
     es: {
-        tagline: "Arte en la piel que cuenta tu historia.",
+        tagline: "El decreto esta en los detalles.",
     },
     en: {
-        tagline: "Art on the skin that tells your story.",
+        tagline: "The devil is in the details.",
     },
 };
