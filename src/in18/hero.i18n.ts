@@ -1,8 +1,8 @@
 export const heroTranslations = {
     es: {
-        tagline: "El decreto esta en los detalles.",
+        tagline: "El decreto está en los detalles.",
     },
     en: {
-        tagline: "The devil is in the details.",
+        tagline: "The decree is in the details.",
     },
 };
