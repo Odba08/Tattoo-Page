@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './contact.scss';
 import { SlLocationPin } from 'react-icons/sl';
 import { FaWhatsapp, FaInstagram, FaTiktok } from 'react-icons/fa';
@@ -12,11 +13,9 @@ const getInitialLanguage = (): 'es' | 'en' => {
 };
 
 const Contact: React.FC = () => {
-    // 1. Manejo del estado y traducción
     const [language, setLanguage] = useState<'es' | 'en'>(getInitialLanguage);
     const t = contactTranslations[language];
 
-    // 2. Efecto para escuchar cambios de idioma en el localStorage
     useEffect(() => {
         const handleStorageChange = () => {
             const newLang = getInitialLanguage();
@@ -31,6 +30,36 @@ const Contact: React.FC = () => {
             window.removeEventListener('storage', handleStorageChange);
         };
     }, [language]);
+
+    type FormStatus = 'idle' | 'sending' | 'success' | 'error';
+    const form = useRef<HTMLFormElement>(null);
+    const [formStatus, setFormStatus] = useState<FormStatus>('idle');
+
+    const sendEmail = ( e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (!form.current) return;
+        setFormStatus('sending');
+
+        emailjs.sendForm(
+            'service_b31zjvf', 
+            'template_o3syxwq', 
+            form.current,       
+            'b-Gk2wwhBulK53XFV'   
+        ).then((result) => {
+            console.log(result.text);
+            setFormStatus('success');
+            form.current?.reset();    
+        }, (error) => {
+            console.log(error.text);
+            setFormStatus('error');  
+        });
+    };
+
+const statusMessages = {
+        sending: 'Enviando...',
+        success: '¡Mensaje enviado con éxito!',
+        error: 'Hubo un error. Intenta más tarde.',
+    };
 
     return (
         <section className='contact-section'>
@@ -75,8 +104,13 @@ const Contact: React.FC = () => {
                 <div className="contact-grid-bottom">
                     <div className="form-container">
                         <h2>{t.titleForm}</h2>
-                        <form>
+                        
+                        {/* 9. Conectamos el formulario con la referencia y la función de envío */}
+                        <form ref={form} onSubmit={sendEmail}>
                             <label htmlFor="name">{t.labelName}</label>
+                            {/* ¡MUY IMPORTANTE! 
+                              El 'name' DEBE coincidir con la variable en tu plantilla de EmailJS 
+                            */}
                             <input type="text" id="name" name="name" required />
                             
                             <label htmlFor="email">{t.labelEmail}</label>
@@ -85,7 +119,22 @@ const Contact: React.FC = () => {
                             <label htmlFor="message">{t.labelMessage}</label>
                             <textarea id="message" name="message" rows={6} required></textarea>
                             
-                            <button type="submit" className="btn-submit">{t.buttonSubmit}</button>
+                            {/* 10. El botón ahora se deshabilita y cambia de texto al enviar */}
+                            <button 
+                                type="submit" 
+                                className="btn-submit" 
+                                disabled={formStatus === 'sending'}
+                            >
+                                {formStatus === 'sending' ? statusMessages.sending : t.buttonSubmit}
+                            </button>
+
+                            {/* 11. Mostramos los mensajes de éxito o error */}
+                            {formStatus === 'success' && (
+                                <p className="form-status-success">{statusMessages.success}</p>
+                            )}
+                            {formStatus === 'error' && (
+                                <p className="form-status-error">{statusMessages.error}</p>
+                            )}
                         </form>
                     </div>
                     <div className="video-container">
