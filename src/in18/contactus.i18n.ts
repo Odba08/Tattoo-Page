@@ -1,6 +1,6 @@
 export const contactUsTranslations = {
     es: {
-        titlePart1: "¡Reservá tu lugar!",
+        titlePart1: "¡Reserva tu lugar!",
         titlePart2: "Contactanos",
         buttonText: "Reservar",
     },
