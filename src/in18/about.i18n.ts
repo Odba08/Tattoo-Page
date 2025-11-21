@@ -5,7 +5,7 @@ export const aboutTranslations = {
     quote: "El secreto está en los detalles.",
 
     // Biografía
-    p1: "Mi nombre es Endir Alvillar tengo {age} años, soy tatuador Venezolano de la ciudad de Maracaibo, tengo {yearsTattooing} años tatuando contando desde la primera vez que toque una máquina para tatuar. Todo empezó en el 2012 estudiando Diseño Gráfico en la universidad, fui a un estudio para que me hicieran mi primero tatuaje...",
+    p1: "Mi nombre es Endir Alvillar tengo {age} años, soy tatuador Venezolano de la ciudad de Maracaibo, tengo {yearsTattooing} años tatuando contando desde la primera vez que toque una máquina para tatuar. Todo empezó en el 2012 estudiando Diseño Gráfico en la universidad, fui a un estudio para que me hicieran mi primer tatuaje...",
     p2: "Al comprarla y tenerla en mis manos en ese instante supe que me iba a dedicar a esto toda mi vida, fue un amor a primera vista. A pesar de que hay altos y bajos...",
     p3: "En el 2015 empecé a tatuar en un estudio de la ciudad y era el mismo studio donde fui hacerme mi primer tatuaje y donde empezó la magia.",
     
