@@ -1,8 +1,8 @@
 export const tattosTranslations = {
     es: {
-        title: "Algunos de nuestros tatuajes",
+        title: "Algunos de mis tatuajes",
     },
     en: {
-        title: "Some of our tattoos",
+        title: "Some of my tattoos",
     },
 };
